@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Data Pipeline Flowchart" id="flowchart1">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#B3E6B3" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="fetchers" value="Auditree Central Fetchers&#xa;(Data Collection Pipeline Setup - 2 days)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="raw_bucket" value="IBM COS Bucket (Raw Data)&#xa;(COS Bucket Configuration - 1 day)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6" vertex="1" parent="1">
+          <mxGeometry x="450" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="transformation" value="Data Transformation Pipeline&#xa;(Data Transformation Logic - 3 days)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7" vertex="1" parent="1">
+          <mxGeometry x="700" y="50" width="250" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="transformed_bucket" value="IBM COS Bucket (Transformed Data)&#xa;(Store Transformed Data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6" vertex="1" parent="1">
+          <mxGeometry x="1000" y="50" width="250" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="dashboard" value="SCC Dashboard&#xa;(Data Visualization - 2 days)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAD1DC" vertex="1" parent="1">
+          <mxGeometry x="1300" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow1" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;rounded=1;html=1;" edge="1" parent="1" source="start" target="fetchers">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow2" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;rounded=1;html=1;" edge="1" parent="1" source="fetchers" target="raw_bucket">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow3" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;rounded=1;html=1;" edge="1" parent="1" source="raw_bucket" target="transformation">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow4" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;rounded=1;html=1;" edge="1" parent="1" source="transformation" target="transformed_bucket">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow5" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;rounded=1;html=1;" edge="1" parent="1" source="transformed_bucket" target="dashboard">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
